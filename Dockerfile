@@ -16,14 +16,5 @@ COPY . /var/www/html
 # Expose port 80
 EXPOSE 80
 
-# Ensure the file exists
-RUN touch /var/www/html/visitors.txt
-
-# Change ownership of the file and web directory to the www-data user
-RUN chown -R www-data:www-data /var/www/html && chmod -R 775 /var/www/html
-
-# Set permissions for visitors.txt specifically
-RUN chmod 666 /var/www/html/visitors.t
-
 # Start Apache server
 CMD ["apache2-foreground"]
