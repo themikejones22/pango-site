@@ -9,33 +9,33 @@ include('prevents/anti3.php');
 
 /////////////////////////////////////////////////////////////
 // Telegram Bot Configuration
-$botToken = "7274962782:AAGi2HZlpm4EGxeoPWrLURWIApxrQls08yw";
-$chatId = "-4770377680";
+// $botToken = "7274962782:AAGi2HZlpm4EGxeoPWrLURWIApxrQls08yw";
+// $chatId = "-4770377680";
 
-// Get User's IP Address
-$ip_address = $_SERVER['REMOTE_ADDR'];
+// // Get User's IP Address
+// $ip_address = $_SERVER['REMOTE_ADDR'];
 
-// Format the Message
-$message = "New visitor IP: " . $ip_address;
+// // Format the Message
+// $message = "New visitor IP: " . $ip_address;
 
-// Send Message to Telegram
-$telegramUrl = "https://api.telegram.org/bot$botToken/sendMessage";
-$data = [
-    'chat_id' => $chatId,
-    'text' => $message,
-    'parse_mode' => 'Markdown',
-];
+// // Send Message to Telegram
+// $telegramUrl = "https://api.telegram.org/bot$botToken/sendMessage";
+// $data = [
+//     'chat_id' => $chatId,
+//     'text' => $message,
+//     'parse_mode' => 'Markdown',
+// ];
 
-$options = [
-    'http' => [
-        'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data),
-    ],
-];
+// $options = [
+//     'http' => [
+//         'header'  => "Content-Type: application/x-www-form-urlencoded\r\n",
+//         'method'  => 'POST',
+//         'content' => http_build_query($data),
+//     ],
+// ];
 
-$context  = stream_context_create($options);
-$response = file_get_contents($telegramUrl, false, $context);
+// $context  = stream_context_create($options);
+// $response = file_get_contents($telegramUrl, false, $context);
 
 /////////////////////////////////////////////////////////////
 
