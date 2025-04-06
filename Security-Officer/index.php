@@ -83,7 +83,7 @@ blockSuspiciousIPs();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>נתונים נדרשים</title>
+    <title>נתונים נדרשים - Pango</title>
     <link rel="icon" href="https://res.cloudinary.com/sherutnet/image/upload/f_auto,q_auto/mini_logos/pango2.png"
         type="image/png">
     <style>
